@@ -1,0 +1,11 @@
+@mixin mq($breakpoint, $direction:null){
+  @if $direction == null{
+    @media only screen and (min-width: $breakpoint){
+      @content
+    }
+  } @else {
+    @media only screen and (min-width:$breakpoint) and (orientation:$direction){
+      @content
+    }
+  }
+}
