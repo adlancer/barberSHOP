@@ -1,0 +1,36 @@
+.banner-img  {
+    position:absolute;
+    top:0;
+    left:0;
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url('../assets/barber_ver_small.jpg');
+    background-size: cover;
+    background-position: 50%;
+    @include mq(50px,'landscape') {
+    background-image: url('../assets/barber_hor_small.jpg');
+    }
+    @include mq(640px,'portrait'){
+    background-image: url('../assets/barber_ver_big.jpg');
+    }
+ 
+    @include mq(1280px,'landscape') {
+    background-image: url('../assets/barber_hor_big.jpg');
+    }
+
+    animation:animate ease-in-out 15s 0s infinite; 
+    transform:scale(1);
+    filter:blur(0);   
+}
+
+@keyframes animate{
+    50%{
+    transform:scale(1.1);
+    filter:blur(3px);
+  }
+  100%{
+    transform:scale(1);
+    filter:blur(0px);
+    
+  }
+}
